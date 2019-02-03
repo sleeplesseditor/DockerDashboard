@@ -4,12 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack -p && node server.js",
+    "start-dev": "./node_modules/.bin/concurrently \"nodemon server.js\" \"webpack --watch\""
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "React",
+    "Docker",
+    "Socket.io"
+  ],
+  "author": "Josh Bryson",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.1",
+    "@types/react-dom": "^16.0.11",
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.9",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.1"
   }
 }
