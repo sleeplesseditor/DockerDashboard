@@ -1,5 +1,9 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
+import * as io from 'socket.io-client';
+import './Container.css';
+
+const socket = io.connect();
 
 export interface Container {
     id: string
@@ -16,6 +20,11 @@ export class ContainerListItem extends React.Component<Container, {}> {
         return this.props.state === 'running'
     }
 
+    onActionButtonClick() {    
+        const evt = this.isRunning() ? 'container.stop' : 'container.start';
+        socket.emit(evt, { id: this.props.id });
+    }
+
     render() {
         const panelClass = this.isRunning() ? 'success' : 'default'
         const classes = classNames('panel', `panel-${panelClass}`)
@@ -30,7 +39,12 @@ export class ContainerListItem extends React.Component<Container, {}> {
                         Image: {this.props.image}
                     </div>
                     <div className="panel-footer">
-                        <button className="btn btn-default">{buttonText}</button>
+                        <button 
+                            onClick={this.onActionButtonClick.bind(this)}
+                            className="btn btn-default"
+                        >
+                            {buttonText}
+                        </button>
                     </div>
                 </div>
             </div>

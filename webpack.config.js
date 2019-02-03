@@ -8,12 +8,19 @@ module.exports = {
     devtool: "source-map",
 
     resolve: {
-        extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
+        extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".css"]
     },
 
     module: {
         rules: [
-            { test: /\.tsx?$/, loader: "ts-loader" }
+            { 
+                test: /\.tsx?$/, 
+                loader: "ts-loader" 
+            },
+            {
+                test: /\.css$/,
+                loader: "css-loader" 
+            }
         ]
     }
 };

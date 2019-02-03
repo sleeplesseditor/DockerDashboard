@@ -16,16 +16,23 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.6",
+    "dockerode": "^2.5.8",
     "express": "^4.16.4",
     "lodash": "^4.17.11",
+    "socket.io": "^2.2.0",
     "terser": "^3.14.1"
   },
   "devDependencies": {
+    "@types/bootstrap": "^4.2.1",
     "@types/classnames": "^2.2.7",
+    "@types/jquery": "^3.3.29",
     "@types/lodash": "^4.14.120",
     "@types/react": "^16.8.1",
     "@types/react-dom": "^16.0.11",
+    "@types/socket.io": "^2.1.2",
+    "@types/socket.io-client": "^1.4.32",
     "concurrently": "^4.1.0",
+    "css-loader": "^2.1.0",
     "nodemon": "^1.18.9",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
